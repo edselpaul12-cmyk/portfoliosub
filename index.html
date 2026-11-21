@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Edsel Paul Ortiz - Portfolio</title>
+<!-- this part is for the Sora font from Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;700&display=swap" rel="stylesheet">
+<!-- this part connects the style.css file -->
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- this part is for the top bar (my name and the menu) -->
+<header class="navbar">
+  <a class="logo" href="#home">Edsel Ortiz</a>
+  <nav id="menu" class="nav-links">
+    <a href="#about">About</a>
+    <a href="#resume">Resume</a>
+    <a href="#work">Work</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <!-- this part is for the dark and light mode button -->
+  <button id="themeBtn" class="theme-btn">Dark / Light</button>
+  <!-- this part is for the menu button that only shows on phones -->
+  <button id="menuBtn" class="menu-btn">Menu</button>
+</header>
+
+<!-- this part is for the home section (my name, bio and photo) -->
+<section id="home" class="hero">
+  <div class="card">
+    <div>
+      <h1>Edsel Paul Ortiz</h1>
+      <p class="bio">Hi there! I'm Edsel, 20 years old, a 2nd-year BSIT student at Holy Cross of Davao College in Davao City, Philippines. I run an online buy and sell service for gamers, including RMT, and I'm learning JavaScript. I also do basic editing. Let's connect!</p>
+      <div class="card-links">
+        <a href="#contact">Email</a>
+        <a href="#contact">Phone</a>
+      </div>
+    </div>
+    <img class="photo" src="profile.jpg" alt="">
+  </div>
+</section>
+
+<!-- this part is for the about section -->
+<section id="about">
+  <div class="wrap">
+    <h2>About</h2>
+    <p>I'm a 2nd-year BSIT student at Holy Cross of Davao College, living in Davao City. I run an online buy and sell service for gaming, and I'm learning JavaScript.</p>
+    <div class="facts">
+      <div class="fact"><span>Age</span>20</div>
+      <div class="fact"><span>Course</span>BSIT</div>
+      <div class="fact"><span>Location</span>Davao City, Philippines</div>
+      <div class="fact"><span>Language</span>English</div>
+      <div class="fact"><span>School</span>Holy Cross of Davao College</div>
+    </div>
+  </div>
+</section>
+
+<!-- this part is for the resume section -->
+<section id="resume" class="alt">
+  <div class="wrap">
+    <h2>Resume</h2>
+
+    <!-- this part is for my education -->
+    <h3>Education</h3>
+    <div class="item">
+      <p class="when">2nd year, ongoing</p>
+      <div>
+        <h4>Bachelor of Science in Information Technology (BSIT)</h4>
+        <p class="sub">Holy Cross of Davao College</p>
+      </div>
+    </div>
+
+    <!-- this part is for my experience -->
+    <h3>Experience</h3>
+    <div class="item">
+      <p class="when">Ongoing</p>
+      <div>
+        <h4>Online gaming buy and sell</h4>
+        <p class="sub">Online seller, Middleman, RMT</p>
+        <p>Online buy and sell service for gamers, including real money trading (RMT).</p>
+      </div>
+    </div>
+
+    <!-- this part is for my certificates -->
+    <h3>Certifications</h3>
+    <div class="item">
+      <p class="when">23 May 2026</p>
+      <div>
+        <h4>JavaScript Essentials 1</h4>
+        <p class="sub">Cisco Networking Academy with JS Institute</p>
+      </div>
+    </div>
+
+    <!-- this part is for my skills -->
+    <h3>Skills</h3>
+    <ul class="skills">
+      <li>JavaScript</li>
+      <li>HTML &amp; CSS</li>
+      <li>Basic editing</li>
+      <li>Reselling (buy low, sell high)</li>
+      <li>Customer service</li>
+      <li>Middleman (buyer and seller deals)</li>
+      <li>RMT</li>
+    </ul>
+
+    <!-- this part is for my projects -->
+    <h3>Projects</h3>
+
+  </div>
+</section>
+
+<!-- this part is for the work section -->
+<section id="work">
+  <div class="wrap">
+    <h2>Work</h2>
+    <div class="item">
+      <p class="when">Ongoing</p>
+      <div>
+        <h4>Online gaming buy and sell</h4>
+        <p class="sub">Online seller, Middleman, RMT</p>
+        <p>I run an online buy and sell service for gamers. I buy gaming items at a low price and resell them for more, handle real money trading (RMT), and act as a middleman between buyers and sellers, helping both sides complete safe and smooth deals.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- this part is for the contact section -->
+<section id="contact" class="alt">
+  <div class="wrap">
+    <h2>Contact</h2>
+    <p>Want to work together or just say hi? Reach me here.</p>
+    <ul class="links">
+      <li>Email: <a href="mailto:edselpaul12@gmail.com">edselpaul12@gmail.com</a></li>
+      <li>Phone: 09690184435</li>
+      <li>Facebook: <a href="https://www.facebook.com/profile.php?id=61581628923752" target="_blank">Edsel Paul Ortiz</a></li>
+    </ul>
+    <!-- this part is for the contact form (script.js opens the email app when you click send) -->
+    <form id="contactForm">
+      <label>Your name<input id="fName" required></label>
+      <label>Your email<input id="fEmail" type="email" required></label>
+      <label>Message<textarea id="fMsg" required></textarea></label>
+      <button class="btn primary" type="submit">Send message</button>
+    </form>
+  </div>
+</section>
+
+<!-- this part is for the footer (the year is filled in by script.js) -->
+<footer>&copy; <span id="year"></span> Edsel Paul Ortiz</footer>
+
+<!-- this part connects the script.js file -->
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,477 @@
+/* this part is for the basic reset */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* this part is for the colors in dark mode (the default) */
+:root {
+    color-scheme: dark;
+    --bg: #0e1716;
+    --alt: #131f1e;
+    --surface: #182625;
+    --ink: #eaf4f1;
+    --muted: #9fb5ae;
+    --line: #26393a;
+    --accent: #5fd3bf;
+    --accent-ink: #06201b;
+    --hero: #0a1f22;
+    --hero-ink: #f1faf8;
+    --hero-accent: #6fe0cc;
+}
+
+/* this part is for the colors in light mode */
+:root[data-theme="light"] {
+    color-scheme: light;
+    --bg: #f3f7f6;
+    --alt: #e7efed;
+    --surface: #ffffff;
+    --ink: #13201e;
+    --muted: #53655f;
+    --line: #d3dfdb;
+    --accent: #0d7f70;
+    --accent-ink: #ffffff;
+    --hero: #0f2a2e;
+}
+
+/* this part is for the smooth scrolling and the basic page style */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 70px;
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Sora", system-ui, -apple-system, "Segoe UI", sans-serif;
+    line-height: 1.65;
+    font-size: 16.5px;
+}
+
+a {
+    color: var(--accent);
+}
+
+:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
+/* this part is for the headings and paragraphs */
+h1,
+h2,
+h3,
+h4 {
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    margin: 0;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 22px;
+}
+
+h3 {
+    font-size: 1.15rem;
+    margin: 34px 0 14px;
+    color: var(--accent);
+}
+
+h4 {
+    font-size: 1.05rem;
+}
+
+p {
+    margin: 0 0 14px;
+    max-width: 62ch;
+}
+
+/* this part is for keeping the content centered */
+.wrap {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* this part is for the top bar (my name and the menu) */
+.topbar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 12px 24px;
+    background: var(--hero);
+    color: var(--hero-ink);
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: var(--hero-ink);
+    text-decoration: none;
+    margin-right: auto;
+}
+
+/* this part is for the menu links design */
+nav {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+nav a {
+    color: var(--hero-ink);
+    text-decoration: none;
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 0.95rem;
+    opacity: 0.85;
+}
+
+nav a:hover {
+    opacity: 1;
+}
+
+/* this part is for the theme button and the menu button */
+.actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.theme-btn {
+    display: grid;
+    place-items: center;
+    width: 38px;
+    height: 38px;
+    padding: 0;
+    background: none;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 50%;
+    color: var(--hero-ink);
+    cursor: pointer;
+}
+
+.theme-btn:hover {
+    border-color: var(--hero-accent);
+    color: var(--hero-accent);
+}
+
+/* this part is for showing the sun icon in dark mode and the moon icon in light mode */
+.icon-moon {
+    display: none;
+}
+
+:root[data-theme="light"] .icon-sun {
+    display: none;
+}
+
+:root[data-theme="light"] .icon-moon {
+    display: block;
+}
+
+.menu-btn {
+    display: none;
+    background: none;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 999px;
+    color: var(--hero-ink);
+    font: inherit;
+    padding: 6px 14px;
+    cursor: pointer;
+}
+
+/* this part is for the home section background */
+.hero {
+    background: var(--hero);
+    color: var(--hero-ink);
+    padding: 72px 24px 84px;
+}
+
+/* this part is for the big card with my name, bio and photo */
+.card {
+    max-width: 840px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 36px;
+    padding: 40px;
+    border-radius: 16px;
+    color: #ffffff;
+    background: linear-gradient(135deg, #0a3b3d 0%, #0e7f78 55%, #12a99a 100%);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+}
+
+.card h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 14px;
+}
+
+.bio {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.92);
+    margin-bottom: 22px;
+}
+
+/* this part is for the email and phone icons */
+.icons {
+    display: flex;
+    gap: 26px;
+}
+
+.icons a {
+    display: inline-grid;
+    place-items: center;
+    padding: 4px;
+    border-radius: 8px;
+    color: #ffffff;
+}
+
+.icons a:hover {
+    color: #b9fff2;
+}
+
+/* this part is for my profile photo (shows initials if profile.jpg is missing) */
+.photo {
+    position: relative;
+    width: min(320px, 70vw);
+    aspect-ratio: 1;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    border: 4px solid rgba(255, 255, 255, 0.85);
+    background: #0a3b3d;
+    overflow: hidden;
+}
+
+.photo .initials {
+    font-size: 4rem;
+    font-weight: 700;
+    color: #b9fff2;
+}
+
+.photo img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* this part is for the sections spacing and colors */
+section {
+    padding: 72px 0;
+}
+
+section.alt {
+    background: var(--alt);
+}
+
+/* this part is for the small info boxes in the about section */
+.facts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.fact {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 12px 16px;
+}
+
+.fact span {
+    display: block;
+    color: var(--muted);
+    font-size: 0.85rem;
+}
+
+/* this part is for the layout of the resume and work entries */
+.item {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: 20px;
+    margin-bottom: 22px;
+}
+
+.when {
+    color: var(--muted);
+    font-size: 0.95rem;
+}
+
+.sub {
+    color: var(--muted);
+    margin: 2px 0 8px;
+}
+
+/* this part is for the certificate image */
+.cert {
+    display: block;
+    max-width: 560px;
+    margin-top: 6px;
+}
+
+.cert img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+}
+
+/* this part is for the skills tags */
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.skills li {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    padding: 5px 14px;
+    border-radius: 999px;
+    font-size: 0.95rem;
+}
+
+/* this part is for the buttons */
+.btn {
+    display: inline-block;
+    padding: 11px 22px;
+    border-radius: 8px;
+    border: 1px solid var(--accent);
+    background: none;
+    color: var(--accent);
+    text-decoration: none;
+    font: inherit;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.btn.primary {
+    background: var(--accent);
+    color: var(--accent-ink);
+}
+
+/* this part is for the contact links */
+.links {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 26px;
+    display: grid;
+    gap: 6px;
+}
+
+/* this part is for the contact form */
+form {
+    display: grid;
+    gap: 14px;
+    max-width: 480px;
+}
+
+label {
+    display: grid;
+    gap: 4px;
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+input,
+textarea {
+    font: inherit;
+    color: var(--ink);
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 10px 12px;
+}
+
+textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+form .btn {
+    justify-self: start;
+}
+
+#formNote {
+    min-height: 1.4em;
+    color: var(--muted);
+    margin: 0;
+}
+
+/* this part is for the footer */
+footer {
+    background: var(--hero);
+    color: var(--hero-ink);
+    text-align: center;
+    padding: 22px 24px;
+    font-size: 0.9rem;
+}
+
+/* this part is for how the page looks on phones */
+@media (max-width: 760px) {
+    .menu-btn {
+        display: block;
+    }
+
+    nav {
+        display: none;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        background: var(--hero);
+        padding: 8px 24px 16px;
+    }
+
+    nav.open {
+        display: flex;
+    }
+
+    nav a {
+        padding: 10px 12px;
+    }
+
+    .hero {
+        padding: 36px 16px 56px;
+    }
+
+    .card {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding: 28px 22px;
+    }
+
+    .photo {
+        order: -1;
+        width: min(220px, 60vw);
+    }
+
+    section {
+        padding: 56px 0;
+    }
+
+    .item {
+        grid-template-columns: 1fr;
+        gap: 4px;
+    }
+}
